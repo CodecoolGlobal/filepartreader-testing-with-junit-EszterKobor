@@ -1,0 +1,4 @@
+I am testing if i wrote the right code
+Madam is a Palindromes
+More  than one  space
+new Line
