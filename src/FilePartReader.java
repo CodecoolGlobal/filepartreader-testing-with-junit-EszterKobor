@@ -34,9 +34,9 @@ public class FilePartReader {
     public String readLines () {
         try {
             String content = read();
-            String[] lines = content.split("/n");
-            String[] partLines = Arrays.copyOfRange(lines, fromLine.intValue(), toLine.intValue() + 1);
-            String partContent = String.join("/n", partLines);
+            String[] lines = content.split("\n");
+            String[] partLines = Arrays.copyOfRange(lines, fromLine - 1, toLine);
+            String partContent = String.join("\n", partLines);
             return partContent;
         } catch (IOException exception) {
             return "file is not founded";
