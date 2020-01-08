@@ -27,7 +27,7 @@ public class FilePartReader {
     }
 
     public String read() throws IOException {
-        String content = new String(Files.readAllBytes(Paths.get(filePath)));
+        String content = new String(Files.readAllBytes(Paths.get(filePath)), "UTF-8");
         return content;
     }
 

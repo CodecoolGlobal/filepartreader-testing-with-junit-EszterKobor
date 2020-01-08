@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -12,10 +13,7 @@ public class FileWordAnalyzer {
 
     public List getWordsOrderedAlphabetically () {
         String content = filePartReader.readLines();
-        ArrayList<String> wordArrayList = new ArrayList<String>();
-        for(String word : content.split("\\s+")) {
-            wordArrayList.add(word);
-        }
+        ArrayList<String> wordArrayList = new ArrayList<String>(Arrays.asList(content.split("\\s+")));
         Collections.sort(wordArrayList);
         return wordArrayList;
     }
