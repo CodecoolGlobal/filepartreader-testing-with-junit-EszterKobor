@@ -33,15 +33,27 @@ public class FileWordAnalyzer {
         String content = filePartReader.readLines();
         ArrayList<String> palindromes = new ArrayList<String>();
         for(String word : content.split("\\s+")) {
-            StringBuilder reversedWord = new StringBuilder();
-            reversedWord.append(word);
-            reversedWord = reversedWord.reverse();
-            if (word.equals(reversedWord)) {
+            if (isPalindrome(word)) {
                 palindromes.add(word);
             }
         }
         return palindromes;
+    }
 
+    static boolean isPalindrome(String str)
+    {
+        int i = 0, j = str.length() - 1;
+
+        while (i < j) {
+
+            if (str.charAt(i) != str.charAt(j))
+                return false;
+
+            i++;
+            j--;
+        }
+
+        return true;
     }
 
 }
